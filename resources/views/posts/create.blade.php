@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Create new post</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -84,15 +84,12 @@
         <label for="body">Title</label>
         <input type="body" name="body" id="body">
         </div>
-        
+
         <button type="submit">Submit</button>    
     </form>
 
         <div>
         <a href="{{route('posts.index')}}">Back to posts</a>
         </div>
-
-
-    
 </body>
 </html>

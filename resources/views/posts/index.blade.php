@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>All posts</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -80,11 +80,14 @@
     <a href="{{route('posts.create')}}">Create a new post</a>
     <a href="/">Back Home</a>
 
-
     @foreach($posts as $post)
         <p>{{$post->title}}</p>
         <p>{{$post->body}}</p>
-        <p> <a href="">View</a> <a href="">Edit</a> <a href="">Delete</a></p>
+        <p> 
+            <a href="{{route('posts.show', ['post'=> $post->id] )}}">View</a> 
+            <a href="{{route('posts.edit', ['post'=> $post->id] )}}">Edit</a> 
+            <a href="{{route('posts.destroy', ['post'=> $post->id] )}}">Delete</a>
+        </p>
         <hr>
     @endforeach
     

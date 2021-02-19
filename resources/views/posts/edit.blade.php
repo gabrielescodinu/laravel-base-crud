@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The post</title>
+    <title>Edit post</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <style>
         html, body {
             background-color: #fff;
@@ -74,7 +75,25 @@
     <a href="{{route('posts.index')}}">Back to posts</a>
     <a href="/">Back Home</a>
 
-    <p>{{$post->title}}</p>
-    <p>{{$post->body}}</p>
+    <h1>Edit the post</h1>
+
+    <form action="{{route('posts.store')}}">
+        @csrf
+        <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title">
+        </div>
+
+        <div class="form-group">
+        <label for="body">Body</label>
+        <input type="body" name="body" id="body">
+        </div>
+
+        <button type="submit">Submit</button>    
+    </form>
+
+    <div>
+    <a href="{{route('posts.index')}}">Back to posts</a>
+    </div>
 </body>
 </html>
