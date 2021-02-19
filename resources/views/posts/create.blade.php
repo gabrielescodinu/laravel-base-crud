@@ -17,13 +17,20 @@
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
-                margin: 0;
             }
-
+            a {
+                text-decoration: none;
+                background: orange;
+                border-radius: 5px;
+                padding: 5px;
+                color: white;
+            }
+            form {
+                margin-bottom: 50px;
+            }
             .full-height {
                 height: 100vh;
             }
-
             .flex-center {
                 align-items: center;
                 display: flex;
@@ -66,7 +73,7 @@
 <body>
     <h1>Create a new post</h1>
 
-    <form action="{{route('posts.store')}}"></form>
+    <form action="{{route('posts.store')}}">
         @csrf
         <div class="form-group">
         <label for="title">Title</label>
@@ -77,10 +84,14 @@
         <label for="body">Title</label>
         <input type="body" name="body" id="body">
         </div>
+        
+        <button type="submit">Submit</button>    
+    </form>
 
-        <button type="submit">Submit</button>
-
+        <div>
         <a href="{{route('posts.index')}}">Back to posts</a>
+        </div>
+
 
     
 </body>

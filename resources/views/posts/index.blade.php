@@ -18,7 +18,20 @@
                 font-weight: 200;
                 height: 100vh;
             }
-
+            a {
+                text-decoration: none;
+                background: orange;
+                border-radius: 5px;
+                padding: 5px;
+                color: white;
+            }
+            p a {
+                text-decoration: none;
+                background: green;
+                border-radius: 5px;
+                padding: 5px;
+                color: white;
+            }
             .full-height {
                 height: 100vh;
             }
@@ -65,13 +78,15 @@
 <body>
 
     <a href="{{route('posts.create')}}">Create a new post</a>
+    <a href="/">Back Home</a>
+
 
     @foreach($posts as $post)
         <p>{{$post->title}}</p>
         <p>{{$post->body}}</p>
-        <p>View | Edit | Delete</p>
+        <p> <a href="">View</a> <a href="">Edit</a> <a href="">Delete</a></p>
+        <hr>
     @endforeach
     
-    <a href="/">Back Home</a>
 </body>
 </html>
