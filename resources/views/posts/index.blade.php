@@ -86,7 +86,11 @@
         <p> 
             <a href="{{route('posts.show', ['post'=> $post->id] )}}">View</a> 
             <a href="{{route('posts.edit', ['post'=> $post->id] )}}">Edit</a> 
-            <a href="{{route('posts.destroy', ['post'=> $post->id] )}}">Delete</a>
+            <form action="{{route('posts.destroy', ['post'=> $post->id] )}}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Delete</button>
+            </form>
         </p>
         <hr>
     @endforeach
