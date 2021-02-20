@@ -73,16 +73,16 @@
 <body>
     <h1>Create a new post</h1>
 
-    <form action="{{route('posts.store')}}">
+    <form action="{{route('posts.store')}}" method="post">
         @csrf
         <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title">
         </div>
 
         <div class="form-group">
-        <label for="body">Title</label>
-        <input type="body" name="body" id="body">
+            <label for="body">Body</label>
+            <input type="body" name="body" id="body">
         </div>
 
         <button type="submit">Submit</button>    
