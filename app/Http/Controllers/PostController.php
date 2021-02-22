@@ -38,6 +38,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
         $post = new Post;
         $post->title = request('title');
         $post->body = request('body');
@@ -77,6 +82,11 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+        
         $data = $request->all();
         $post->update($data);
         return redirect()->route('posts.index');

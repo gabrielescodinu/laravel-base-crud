@@ -83,6 +83,8 @@
     @foreach($posts as $post)
         <p>{{$post->title}}</p>
         <p>{{$post->body}}</p>
+        <p>{{$post->created_at}}</p>
+        <p>{{$post->updated_at}}</p>
         <p> 
             <a href="{{route('posts.show', ['post'=> $post->id] )}}">View</a> 
             <a href="{{route('posts.edit', ['post'=> $post->id] )}}">Edit</a> 
